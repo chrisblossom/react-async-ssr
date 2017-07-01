@@ -5,7 +5,9 @@ const webpack = require('webpack');
 module.exports = {
   target: 'node',
   context: __dirname,
-  entry: './server',
+  entry: {
+    main:'./server',
+  },
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'server.js',
@@ -22,6 +24,9 @@ module.exports = {
   plugins: [
     new webpack.optimize.ModuleConcatenationPlugin(),
     new webpack.NamedModulesPlugin(),
+    new webpack.optimize.LimitChunkCountPlugin({
+      maxChunks: 1,
+    }),
   ],
   externals: new NodeExternals({
     whitelist: [

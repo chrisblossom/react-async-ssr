@@ -1,7 +1,17 @@
 {
   "presets": [
-    ["es2015", {
-      "modules": false
-    }], "stage-2", "react"
+    [
+      "env",
+      {
+        "targets": {
+          "browsers": ["> 0%"],
+          "uglify": true
+        },
+        "modules": false,
+        "useBuiltIns": true
+      }
+    ],
+    "react"
   ],
+  "plugins": ["transform-object-rest-spread", "syntax-dynamic-import"]
 }

@@ -3,10 +3,13 @@ const webpack = require('webpack');
 
 module.exports = {
   context: __dirname,
-  entry: './client',
+  entry: {
+    main: './client',
+  },
   output: {
     path: path.resolve(__dirname, 'public'),
-    filename: 'js/[name].js',
+    filename: 'js/[name].[hash:8].js',
+    chunkFilename: 'js/[name].[chunkhash:8].js',
   },
   module: {
     rules: [
