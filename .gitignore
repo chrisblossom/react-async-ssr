@@ -7,3 +7,6 @@
 !/public/.keep
 
 stats.json
+
+.idea
+.vscode
